@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết chương trình nhập 3 cạnh của 1 tam giác, cho biết đó là tam giác gì?-->
+<!--1. Kiểm tra xem 3 số đầu vào có phải Tam giác không-->
+<!--2. Có phải tam giác cân, vuông, vuông cân, đều khôn-->
+
+
+</body>
+</html>
+<script>
+    let check = true
+    let a = parseInt(prompt())
+    let b = parseInt(prompt())
+    let c = parseInt(prompt())
+
+    if ((a + b <= c) || (a + c <= b) || (c + b <= a)) {
+        check = false;
+        document.write("đây không phải tam giác ")
+    } else {
+        document.write("đây là tam giác ")
+    };
+
+    if (a == b == c) {
+        document.write("đều")
+    }
+    if ((a==b!=c)||(a==c!=b)||(c==b!=a)){
+        document.write("cân")
+    }
+    if ((Math.sqrt(a*a+b*b)==c)||(Math.sqrt(a*a+c*c)==b)||(Math.sqrt(c*c+b*b)==a)){
+        document.write("vuông")
+    }
+</script>
