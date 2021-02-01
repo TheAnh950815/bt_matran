@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let arr = [
+        [1, 2, 3, 4],
+        [5, 1, 4, 8],
+        [2, 1, 9, 7],
+        [2, 1, 20, 7]
+    ]
+    let max = 0;
+    let maxArr = [];
+    let tich_cot = 1;
+    let sumCC = 0;
+    let sumCP = 0;
+    let sumArr = 0
+    let tich_MT = 1
+
+
+    for (let i = 0; i < arr[0].length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            tich_cot *= arr[j][i];
+        }
+        document.write("tích các cột là " + tich_cot + "<br>");
+        tich_cot = 1
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[0].length; j++) {
+            if (arr[i][j] > max) {
+                max = arr[i][j]
+            }
+        }
+    }
+    document.write("max là " + max + "<br>")
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].indexOf(max) != -1) {
+            maxArr = arr[i]
+            document.write('mảng chứa max là ' + arr[i] + "<br>")
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        sumCC += arr[i][i]
+    }
+    document.write('tổng đường chéo chính ' + sumCC + "<br>")
+
+    for (let i = 0; i < arr.length - 1 - i; i++) {
+        sumCP += arr[i][arr.length - 1 - i]
+    }
+    document.write('tổng đường chéo phụ ' + sumCP + "<br>")
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+                sumArr += arr[i][j]
+        }
+    }document.write("tổng ma trận " + sumArr + "<br>")
+
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+                tich_MT *= arr[i][j]
+        }
+    }document.write("tích ma trận " + tich_MT + "<br>")
+
+</script>
